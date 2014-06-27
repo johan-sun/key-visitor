@@ -222,21 +222,3 @@ unary<UnaryFun, key<R (C::*)()const > > unary_of(UnaryFun fun, R (C::* m)()const
     key<R(C::*)()const > k(m);
     return unary<UnaryFun, key<R(C::*)()const > >(fun, k);
 }
-
-
-#include  <algorithm>
-#include  <functional>
-#include  <iostream>
-using namespace std;
-
-struct Vec{
-    int x, y;
-    int sum()const{
-        return x + y;
-    }
-};
-int main(int argc, char *argv[])
-{
-    auto f = binary_of<less>(&Vec::x);
-    return 0;
-}
