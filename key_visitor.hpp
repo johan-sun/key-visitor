@@ -127,7 +127,7 @@ struct binary{
         return binary_fun(key(std::forward<T1>(a)), key(std::forward<T2>(b)));
     }
     template<typename T, typename V>
-    auto operator()(T&& a, V& b)->decltype(binary_fun(key(std::forward<T>(a)), std::forward<V>(b))){
+    auto operator()(T&& a, V&& b)->decltype(binary_fun(key(std::forward<T>(a)), std::forward<V>(b))){
         return binary_fun(key(std::forward<T>(a)), std::forward<V>(b));
     }
     template<typename V, typename T>
